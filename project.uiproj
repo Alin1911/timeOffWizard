@@ -1,0 +1,6 @@
+{
+  "Name": "TimeOffWizard",
+  "ProjectType": "Process",
+  "Description": "Automation that decides whether you deserve a vacation or go back to your boring job",
+  "MainFile": "Main.xaml"
+}
