@@ -4,13 +4,14 @@
   "description": "Automation that decides whether you deserve a vacation or go back to your boring job",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.GSuite.Activities": "[3.5.10]",
     "UiPath.System.Activities": "[25.8.1]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "25.0.176.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

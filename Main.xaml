@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugam="clr-namespace:UiPath.GSuite.Activities.Models;assembly=UiPath.GSuite.Activities" xmlns:ugase="clr-namespace:UiPath.GSuite.Activities.Sheets.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugsc="clr-namespace:UiPath.GSuite.Sheets.Contracts;assembly=UiPath.GSuite" xmlns:ugsm="clr-namespace:UiPath.GSuite.Sheets.Models;assembly=UiPath.GSuite" xmlns:ugsmc="clr-namespace:UiPath.GSuite.Sheets.Models.Columns;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -23,6 +23,28 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Models</x:String>
+      <x:String>UiPath.GSuite.Sheets.Enums</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.GSuite.Sheets.Models</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>Google.Apis.Docs.v1.Data</x:String>
+      <x:String>Google.Apis.Requests</x:String>
+      <x:String>UiPath.GSuite.Sheets.Contracts</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
@@ -53,13 +75,597 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable1</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable2</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Google.Apis.Docs.v1</AssemblyReference>
+      <AssemblyReference>Google.Apis</AssemblyReference>
+      <AssemblyReference>Google.Apis.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1342,4916" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="andrei.alin11@yahoo.com" AuthenticationType="OAuthClientID" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="Google Workspace Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="542,4893" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" Services="Unselected" UseConnectionService="False" User="BDA48510">
+      <uga:GSuiteApplicationScope.AuthenticationScopes>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+          <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/drive</InArgument>
+        </scg:List>
+      </uga:GSuiteApplicationScope.AuthenticationScopes>
+      <uga:GSuiteApplicationScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="GSuiteScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Cautare sheet" sap:VirtualizedContainerService.HintSize="540,4666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uga:ReadRangeConnections x:TypeArguments="sd:DataTable" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" RangeInformation="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" DisplayName="Read Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="506,228" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_2" ItemSelectionMode="Browse" Range="Sheet1" ReadAs="Values" Result="[GlobalVariablesNamespace.GlobalVariables.dt]" UseConnectionService="False" WorkingWithTemplateSpreadsheet="False">
+              <uga:ReadRangeConnections.ColumnNames>
+                <x:Array Type="x:String">
+                  <x:String>Email</x:String>
+                  <x:String>Total_Zile</x:String>
+                  <x:String>Zile_Folosite</x:String>
+                  <x:String>Zile_Ramase</x:String>
+                </x:Array>
+              </uga:ReadRangeConnections.ColumnNames>
+              <uga:ReadRangeConnections.FileIdBackup>
+                <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="Browse">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </uga:ReadRangeConnections.FileIdBackup>
+              <uga:ReadRangeConnections.Item>
+                <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID0}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2RyaXZlIl0sIlVzZXJJZCI6IkJEQTQ4NTEwIiwiRW1haWxBZGRyZXNzIjpudWxsLCJBY2NvdW50IjoiYW5kcmVpLmFsaW4xMUB5YWhvby5jb20iLCJTdG9yYWdlIjp7IkxvY2FsRm9sZGVyIjoiR1N1aXRlIiwiT3JjaGVzdHJhdG9yRm9sZGVyIjoiIiwiTG9jYXRpb24iOjB9fQ==" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                  <ugam:DriveItemArgument.ParentIdFullPathHint>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </ugam:DriveItemArgument.ParentIdFullPathHint>
+                </ugam:DriveItemArgument>
+              </uga:ReadRangeConnections.Item>
+              <uga:ReadRangeConnections.RangeMetadata>
+                <ugsm:RangeMetadataSlim ColumnStart="1" RangeType="Range" />
+              </uga:ReadRangeConnections.RangeMetadata>
+            </uga:ReadRangeConnections>
+            <If Condition="[GlobalVariablesNamespace.GlobalVariables.dt Is Nothing OrElse GlobalVariablesNamespace.GlobalVariables.dt.Rows.Count = 0]" DisplayName="Verificam daca avem date" sap:VirtualizedContainerService.HintSize="506,932" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Daca nu avem date scriem capul de tabel" sap:VirtualizedContainerService.HintSize="450,703" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:BuildDataTable DataTable="[dtHeader]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Email&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Total_Zile&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Zile_Folosite&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Zile_Ramase&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                  <uga:WriteRangeConnections ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="416,332" sap2010:WorkflowViewState.IdRef="WriteRangeConnections_2" IncludeHeaders="True" ItemSelectionMode="Browse" Range="Sheet1" RowPosition="0" Source="[dtHeader]" UseConnectionService="False" WorkingWithTemplateSpreadsheet="False" WriteMode="Overwrite">
+                    <uga:WriteRangeConnections.FileIdBackup>
+                      <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="Browse">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </uga:WriteRangeConnections.FileIdBackup>
+                    <uga:WriteRangeConnections.Item>
+                      <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID1}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2RyaXZlIl0sIlVzZXJJZCI6IkJEQTQ4NTEwIiwiRW1haWxBZGRyZXNzIjpudWxsLCJBY2NvdW50IjoiYW5kcmVpLmFsaW4xMUB5YWhvby5jb20iLCJTdG9yYWdlIjp7IkxvY2FsRm9sZGVyIjoiR1N1aXRlIiwiT3JjaGVzdHJhdG9yRm9sZGVyIjoiIiwiTG9jYXRpb24iOjB9fQ==" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                        <ugam:DriveItemArgument.ParentIdFullPathHint>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ugam:DriveItemArgument.ParentIdFullPathHint>
+                      </ugam:DriveItemArgument>
+                    </uga:WriteRangeConnections.Item>
+                    <uga:WriteRangeConnections.RangeWriteModeBackup>
+                      <usau:BackupSlot x:TypeArguments="ugase:RangeWriteMode" StoredValue="Overwrite">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugase:RangeWriteMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </uga:WriteRangeConnections.RangeWriteModeBackup>
+                  </uga:WriteRangeConnections>
+                  <uga:ReadRangeConnections x:TypeArguments="sd:DataTable" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" RangeInformation="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" DisplayName="Read Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="416,219" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_3" ItemSelectionMode="Browse" Range="Sheet1" ReadAs="Values" Result="[GlobalVariablesNamespace.GlobalVariables.dt]" UseConnectionService="False" WorkingWithTemplateSpreadsheet="False">
+                    <uga:ReadRangeConnections.ColumnNames>
+                      <x:Array Type="x:String">
+                        <x:String>Email</x:String>
+                        <x:String>Total_Zile</x:String>
+                        <x:String>Zile_Folosite</x:String>
+                        <x:String>Zile_Ramase</x:String>
+                      </x:Array>
+                    </uga:ReadRangeConnections.ColumnNames>
+                    <uga:ReadRangeConnections.FileIdBackup>
+                      <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID2" StoredValue="Browse">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </uga:ReadRangeConnections.FileIdBackup>
+                    <uga:ReadRangeConnections.Item>
+                      <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID2}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2RyaXZlIl0sIlVzZXJJZCI6IkJEQTQ4NTEwIiwiRW1haWxBZGRyZXNzIjpudWxsLCJBY2NvdW50IjoiYW5kcmVpLmFsaW4xMUB5YWhvby5jb20iLCJTdG9yYWdlIjp7IkxvY2FsRm9sZGVyIjoiR1N1aXRlIiwiT3JjaGVzdHJhdG9yRm9sZGVyIjoiIiwiTG9jYXRpb24iOjB9fQ==" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                        <ugam:DriveItemArgument.ParentIdFullPathHint>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ugam:DriveItemArgument.ParentIdFullPathHint>
+                      </ugam:DriveItemArgument>
+                    </uga:ReadRangeConnections.Item>
+                    <uga:ReadRangeConnections.RangeMetadata>
+                      <ugsm:RangeMetadataSlim ColumnStart="1" RangeType="Range" />
+                    </uga:ReadRangeConnections.RangeMetadata>
+                  </uga:ReadRangeConnections>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Daca avem nu facem nimic" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign DisplayName="Cautam randul pentru angajatul nostru" sap:VirtualizedContainerService.HintSize="506,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataRow[]">[matchedRows]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataRow[]">[dt.AsEnumerable().Where(Function(r) r("Email").ToString().ToLower() = employeeEmail.Trim().ToLower).ToArray()]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <If Condition="[matchedRows.Count &gt; 0]" DisplayName="Verificam daca angajatul a fost gasit" sap:VirtualizedContainerService.HintSize="506,3222" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Daca l-am gasit ii calculam zilele ramase" sap:VirtualizedContainerService.HintSize="504,1885" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataRow">[row]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataRow">[matchedRows.First()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[total]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[CInt(row("Total_Zile"))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[folosite]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[CInt(row("Zile_Folosite"))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[ramase]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[CInt(row("Zile_Ramase"))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[ramase &lt; employeeDays]" DisplayName="Verificam daca mai are zile libere" sap:VirtualizedContainerService.HintSize="470,1365" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <Sequence DisplayName="Daca nu respingem cererea" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_10">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[requestResponse]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Cerere respinsa</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Daca da actalizam datele din tabel si acceptam cererea" sap:VirtualizedContainerService.HintSize="468,1069" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_13">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[folosite]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[folosite + employeeDays]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_12">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[ramase]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[total - folosite]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_14">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[rowIndex]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[dt.Rows.IndexOf(row) + 2]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" Cell="[&quot;C&quot; &amp; rowIndex.ToString]" DisplayName="Write Cell" HideCell="False" sap:VirtualizedContainerService.HintSize="434,279" sap2010:WorkflowViewState.IdRef="WriteCellConnections_1" ItemSelectionMode="Browse" RangeLocation="Sheet1" UseConnectionService="False" WhatToWrite="[folosite.ToString]">
+                          <uga:WriteCellConnections.FileIdBackup>
+                            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID3" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </uga:WriteCellConnections.FileIdBackup>
+                          <uga:WriteCellConnections.Item>
+                            <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID3}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2RyaXZlIl0sIlVzZXJJZCI6IkJEQTQ4NTEwIiwiRW1haWxBZGRyZXNzIjpudWxsLCJBY2NvdW50IjoiYW5kcmVpLmFsaW4xMUB5YWhvby5jb20iLCJTdG9yYWdlIjp7IkxvY2FsRm9sZGVyIjoiR1N1aXRlIiwiT3JjaGVzdHJhdG9yRm9sZGVyIjoiIiwiTG9jYXRpb24iOjB9fQ==" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                              <ugam:DriveItemArgument.ParentIdFullPathHint>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </ugam:DriveItemArgument.ParentIdFullPathHint>
+                            </ugam:DriveItemArgument>
+                          </uga:WriteCellConnections.Item>
+                        </uga:WriteCellConnections>
+                        <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" Cell="[&quot;D&quot; &amp; rowIndex.ToString]" DisplayName="Write Cell" HideCell="False" sap:VirtualizedContainerService.HintSize="434,279" sap2010:WorkflowViewState.IdRef="WriteCellConnections_2" ItemSelectionMode="Browse" RangeLocation="Sheet1" UseConnectionService="False" WhatToWrite="[ramase.ToString]">
+                          <uga:WriteCellConnections.FileIdBackup>
+                            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </uga:WriteCellConnections.FileIdBackup>
+                          <uga:WriteCellConnections.Item>
+                            <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID4}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2RyaXZlIl0sIlVzZXJJZCI6IkJEQTQ4NTEwIiwiRW1haWxBZGRyZXNzIjpudWxsLCJBY2NvdW50IjoiYW5kcmVpLmFsaW4xMUB5YWhvby5jb20iLCJTdG9yYWdlIjp7IkxvY2FsRm9sZGVyIjoiR1N1aXRlIiwiT3JjaGVzdHJhdG9yRm9sZGVyIjoiIiwiTG9jYXRpb24iOjB9fQ==" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                              <ugam:DriveItemArgument.ParentIdFullPathHint>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </ugam:DriveItemArgument.ParentIdFullPathHint>
+                            </ugam:DriveItemArgument>
+                          </uga:WriteCellConnections.Item>
+                        </uga:WriteCellConnections>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_15">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[requestResponse]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Cerere acceptata</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Daca angajatul nu este in tabel" sap:VirtualizedContainerService.HintSize="504,1198" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Default 20 de zile libere" sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[total]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">20</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[folosite]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[employeeDays]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[ramase]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[total - folosite]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[ramase &lt; 0]" DisplayName="Verificam daca a cerut mai multe zile decat poate avea" sap:VirtualizedContainerService.HintSize="470,793" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence DisplayName="Daca da respingem cererea" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[requestResponse]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Cerere respinsa</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Daca nu adaugam angajatul si acceptam cererea" sap:VirtualizedContainerService.HintSize="468,497" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uga:WriteRowConnections AllFields="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DataRow="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" ArrayRow="[{employeeEmail, total.ToString, folosite.ToString, ramase.ToString}]" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" DataType="ArrayRow" DisplayName="Write Row" HasHeaders="False" sap:VirtualizedContainerService.HintSize="434,331" sap2010:WorkflowViewState.IdRef="WriteRowConnections_1" ItemSelectionMode="Browse" Range="Sheet1" RowPosition="0" UseConnectionService="False" WorkingWithTemplateSpreadsheet="False" WriteMode="Append">
+                          <uga:WriteRowConnections.FileIdBackup>
+                            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID5" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </uga:WriteRowConnections.FileIdBackup>
+                          <uga:WriteRowConnections.InputDataTypeBackup>
+                            <usau:BackupSlot x:TypeArguments="ugase:InputDataType" StoredValue="ArrayRow">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:List x:TypeArguments="x:Object" x:Key="DataRow" Capacity="1">
+                                  <x:Null />
+                                </scg:List>
+                                <scg:List x:TypeArguments="x:Object" x:Key="ArrayRow" Capacity="1">
+                                  <x:Null />
+                                </scg:List>
+                                <scg:List x:TypeArguments="x:Object" x:Key="IndividualFields" Capacity="2">
+                                  <x:Array Type="ugsc:IRangeField">
+                                    <ugsmc:RangeColumn DisplayName="Column A" Guid="847d67f4-a038-4f6a-bc73-722b4503d0a3" Name="Column A">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Type="Object" Value="Email" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column B" Guid="66812e16-85dd-4449-a24b-6b57efb8abd6" Name="Column B">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Type="Object" Value="Total_Zile" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column C" Guid="7a78614b-60ee-4bcc-ab4b-b3e30dcdae3b" Name="Column C">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Type="Object" Value="Zile_Folosite" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column D" Guid="16089312-a7f6-47c9-b031-a961643b66d5" Name="Column D">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Type="Object" Value="Zile_Ramase" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column E" Guid="fbe41838-0397-4f39-8528-0b108a7408c3" Name="Column E">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column F" Guid="f0c89170-39f0-4da7-80e7-6039d91a5d84" Name="Column F">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column G" Guid="2a2bb1a6-8edf-4ad3-b333-b75835fb430b" Name="Column G">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column H" Guid="9fcd962f-3f3d-457a-a52b-43dfd28583e1" Name="Column H">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column I" Guid="473d51ed-51d0-4b3b-bedb-859623d814de" Name="Column I">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column J" Guid="fa3e699b-032a-40e8-9afc-dbb64d6af7a8" Name="Column J">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column K" Guid="81be617b-3089-4e62-a6f9-691da3272886" Name="Column K">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column L" Guid="f35a8d1e-720c-44d5-9a98-18718fe463a5" Name="Column L">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column M" Guid="ab55eb3f-1df1-4aca-96c1-b213bd9fbf2a" Name="Column M">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column N" Guid="ccd7adab-010b-4274-b081-398741337b38" Name="Column N">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column O" Guid="d2e8a0c2-1051-4db1-a680-793c3645a423" Name="Column O">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column P" Guid="9598de6b-eeb7-42f5-8cf2-6d9fa780a7f4" Name="Column P">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column Q" Guid="b5e7e099-0394-41c8-b001-33fed37c255d" Name="Column Q">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column R" Guid="015c193f-f96c-499b-959d-485e3423ab1b" Name="Column R">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column S" Guid="4744c0c2-3443-4610-a2ab-d5f0a0f1d0b6" Name="Column S">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column T" Guid="f00367d8-d49c-4f4b-a37c-d3f88029c629" Name="Column T">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column U" Guid="77e7a891-3b0d-4d76-a65b-6e9dfc6aee3b" Name="Column U">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column V" Guid="b14185ac-698c-42fe-90a1-bc759d4897bd" Name="Column V">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column W" Guid="f823f235-b01d-46e6-b7db-9ef6b7c23342" Name="Column W">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column X" Guid="02dd5ef6-9821-4f57-b9be-33d2f6c115f7" Name="Column X">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column Y" Guid="2c9c71b3-cc1f-44f6-80bc-248e9f6e45c8" Name="Column Y">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                    <ugsmc:RangeColumn DisplayName="Column Z" Guid="dbd3a769-5da8-431d-badf-fa9ad33ab5f4" Name="Column Z">
+                                      <ugsmc:RangeColumn.Sample>
+                                        <ugsmc:CellDetail TypeFormat="{x:Null}" Value="{x:Null}" Type="Object" />
+                                      </ugsmc:RangeColumn.Sample>
+                                    </ugsmc:RangeColumn>
+                                  </x:Array>
+                                  <uga:ActivityState />
+                                </scg:List>
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </uga:WriteRowConnections.InputDataTypeBackup>
+                          <uga:WriteRowConnections.Item>
+                            <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID5}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2RyaXZlIl0sIlVzZXJJZCI6IkJEQTQ4NTEwIiwiRW1haWxBZGRyZXNzIjpudWxsLCJBY2NvdW50IjoiYW5kcmVpLmFsaW4xMUB5YWhvby5jb20iLCJTdG9yYWdlIjp7IkxvY2FsRm9sZGVyIjoiR1N1aXRlIiwiT3JjaGVzdHJhdG9yRm9sZGVyIjoiIiwiTG9jYXRpb24iOjB9fQ==" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                              <ugam:DriveItemArgument.ParentIdFullPathHint>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </ugam:DriveItemArgument.ParentIdFullPathHint>
+                            </ugam:DriveItemArgument>
+                          </uga:WriteRowConnections.Item>
+                          <uga:WriteRowConnections.RangeWriteModeBackup>
+                            <usau:BackupSlot x:TypeArguments="ugase:RangeWriteMode" StoredValue="Append">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugase:RangeWriteMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </uga:WriteRowConnections.RangeWriteModeBackup>
+                          <uga:WriteRowConnections.State>
+                            <uga:ActivityState />
+                          </uga:WriteRowConnections.State>
+                        </uga:WriteRowConnections>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_11">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[requestResponse]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Cerere acceptata</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="506,109" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[requestResponse]" />
+          </Sequence>
+        </ActivityAction>
+      </uga:GSuiteApplicationScope.Body>
+      <uga:GSuiteApplicationScope.BucketFullPathBackup>
+        <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:GSuiteApplicationScope.BucketFullPathBackup>
+      <uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+        <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="{x:Null}">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+    </uga:GSuiteApplicationScope>
   </Sequence>
 </Activity>

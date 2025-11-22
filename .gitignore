@@ -1,0 +1,32 @@
+# === UiPath Local & Temp ===
+.local/
+.project/globalVariables.json
+.project/JitCustomTypes.json
+.project/JitCustomTypesSchema.json
+.settings/
+
+# === Cache & Packages ===
+.local/AllDependencies.json
+.local/PackageCache.json
+.local/nuget.cache
+
+# === DLL-uri și build-uri generate automat ===
+.local/.customtypes/
+.local/.globalvariables/.tmp/
+.local/install/
+*.dll
+
+# === Database / References ===
+.local/db/
+
+# === OS & Editor specific ===
+*.log
+*.tmp
+*.bak
+*.swp
+Thumbs.db
+.DS_Store
+
+# === Optional: Nu salva entry-points locale ===
+entry-points.json
+
