@@ -5,6 +5,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.GSuite.Activities": "[3.5.10]",
+    "UiPath.MicrosoftOffice365.Activities": "[3.5.10]",
     "UiPath.System.Activities": "[25.8.1]"
   },
   "webServices": [],
