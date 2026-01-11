@@ -136,9 +136,10 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>GlobalVariablesytEwSiDywS</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1528,2560" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1921,2560" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="remainingDays" />
       <Variable x:TypeArguments="x:Int32" Name="employeeDays" />
@@ -281,7 +282,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <umam:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Mark Email as Read or Unread" sap:VirtualizedContainerService.HintSize="488,232" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAsReadUnread="Read" UseConnectionService="True" />
+            <umam:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Mark Email as Read or Unread" Email="[CurrentEmail]" sap:VirtualizedContainerService.HintSize="488,232" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAsReadUnread="Read" UseConnectionService="True" />
           </Sequence>
         </ActivityAction>
       </umam:ForEachEmailConnections.Body>
