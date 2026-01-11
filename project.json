@@ -4,6 +4,7 @@
   "description": "Automation that decides whether you deserve a vacation or go back to your boring job",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Excel.Activities": "[3.3.1]",
     "UiPath.GSuite.Activities": "[3.5.10]",
     "UiPath.MicrosoftOffice365.Activities": "[3.5.10]",
     "UiPath.System.Activities": "[25.8.1]"

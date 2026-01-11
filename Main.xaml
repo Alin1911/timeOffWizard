@@ -45,8 +45,6 @@
       <x:String>Google.Apis.Docs.v1.Data</x:String>
       <x:String>Google.Apis.Requests</x:String>
       <x:String>UiPath.GSuite.Sheets.Contracts</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
       <x:String>UiPath.MicrosoftOffice365.Models</x:String>
       <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
@@ -60,6 +58,8 @@
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>UiPath.MicrosoftOffice365</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -136,9 +136,11 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1528,2560" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1652,2780" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="remainingDays" />
       <Variable x:TypeArguments="x:Int32" Name="employeeDays" />
@@ -149,7 +151,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umam:ForEachEmailConnections ConnectionAccountName="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID3}" FreeTextFilter="{x:Null}" Length="{x:Null}" Mailbox="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Inbox" BrowserFolderId="AQMkADAwATM3ZmYAZS0wMjljLWE2N2QtMDACLTAwCgAuAAAD96o_DBs8I0aGH2BSJgh3dAEAVyKG5waoJEWSEIUBdRMksAAAAgEMAAAA" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="524,2537" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" Importance="Any" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+    <umam:ForEachEmailConnections ConnectionAccountName="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID3}" FreeTextFilter="{x:Null}" Length="{x:Null}" Mailbox="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Inbox" BrowserFolderId="AQMkADAwATM3ZmYAZS0wMjljLWE2N2QtMDACLTAwCgAuAAAD96o_DBs8I0aGH2BSJgh3dAEAVyKG5waoJEWSEIUBdRMksAAAAgEMAAAA" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="524,2757" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" Importance="Any" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
       <umam:ForEachEmailConnections.Body>
         <ActivityAction x:TypeArguments="umm:Office365Message, x:Int32">
           <ActivityAction.Argument1>
@@ -158,13 +160,13 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2253" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2473" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentEmail.IsRead]" sap:VirtualizedContainerService.HintSize="488,1957" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[CurrentEmail.IsRead]" sap:VirtualizedContainerService.HintSize="488,2177" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,94" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -175,13 +177,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1724" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1940" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[employeeEmail]</OutArgument>
                     </Assign.To>
@@ -189,7 +191,7 @@
                       <InArgument x:TypeArguments="x:String">[CurrentEmail.From.Address]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[employeeDays]</OutArgument>
                     </Assign.To>
@@ -199,20 +201,20 @@
                   </Assign>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GoogleSheetCalculation - Invoke Workflow File (GoogleSheetCalculation.xaml)" sap:VirtualizedContainerService.HintSize="452,186" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GoogleSheetCalculation.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <OutArgument x:TypeArguments="x:Int32" x:Key="out_employeeRemainingDays" />
-                      <InArgument x:TypeArguments="x:String" x:Key="in_employeeEmail" />
-                      <InArgument x:TypeArguments="x:Int32" x:Key="in_employeeDays" />
+                      <OutArgument x:TypeArguments="x:Int32" x:Key="out_employeeRemainingDays">[remainingDays]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_employeeEmail">[employeeEmail]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_employeeDays">[employeeDays]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <If Condition="[remainingDays &lt; 0]" sap:VirtualizedContainerService.HintSize="452,1128" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[remainingDays &lt; 0]" sap:VirtualizedContainerService.HintSize="452,1332" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,499" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,599" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[&quot;Bună ziua,&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xD;&#xA;&quot;Cererea ta de concediu a fost RESPINSĂ.&quot; &amp; vbCrLf &amp;&#xD;&#xA;&quot;Pentru a putea aproba cererea, mai aveai nevoie de &quot; &amp;&#xD;&#xA;Math.Abs(remainingDays).ToString &amp; &quot; zile de concediu.&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xD;&#xA;&quot;O zi bună!&quot;]" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,435" sap2010:WorkflowViewState.IdRef="SendMailConnections_2" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="Cerere de concediu respinsa" To="[New List(Of String) From {CurrentEmail.From.Address}]" UseConnectionService="True" UseSharedMailbox="False">
+                        <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[&quot;Bună ziua,&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xA;&quot;Cererea ta de concediu a fost RESPINSĂ.&quot; &amp; vbCrLf &amp;&#xA;&quot;Pentru a putea aproba cererea, mai aveai nevoie de &quot; &amp;&#xA;Math.Abs(remainingDays).ToString &amp; &quot; zile de concediu.&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xA;&quot;O zi bună!&quot;]" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,535" sap2010:WorkflowViewState.IdRef="SendMailConnections_2" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="Cerere de concediu respinsa" To="[New List(Of String) From {CurrentEmail.From.Address}]" UseConnectionService="True" UseSharedMailbox="False">
                           <umam:SendMailConnections.AttachmentsBackup>
                             <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
                               <usau:BackupSlot.BackupValues>
@@ -242,13 +244,13 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,495" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,599" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[&quot;Bună ziua,&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xD;&#xA;&quot;Cererea ta de concediu a fost APROBATĂ.&quot; &amp; vbCrLf &amp;&#xD;&#xA;&quot;Zile de concediu rămase după aprobare: &quot; &amp; remainingDays.ToString &amp; &quot;.&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xD;&#xA;&quot;O zi bună!&quot;]" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,435" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="Cerere de concediu respinsa" To="[New List(Of String) From {CurrentEmail.From.Address}]" UseConnectionService="True" UseSharedMailbox="False">
+                        <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[&quot;Bună ziua,&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xA;&quot;Cererea ta de concediu a fost APROBATĂ.&quot; &amp; vbCrLf &amp;&#xA;&quot;Zile de concediu rămase după aprobare: &quot; &amp; remainingDays.ToString &amp; &quot;.&quot; &amp; vbCrLf &amp; vbCrLf &amp;&#xA;&quot;O zi bună!&quot;]" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,535" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="Cerere de concediu aprobata" To="[New List(Of String) From {CurrentEmail.From.Address}]" UseConnectionService="True" UseSharedMailbox="False">
                           <umam:SendMailConnections.AttachmentsBackup>
                             <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
                               <usau:BackupSlot.BackupValues>
@@ -281,7 +283,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <umam:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Mark Email as Read or Unread" sap:VirtualizedContainerService.HintSize="488,232" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAsReadUnread="Read" UseConnectionService="True" />
+            <umam:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="0e2ae6cc-b2c6-4fea-b016-3eb2d14d57a7" DisplayName="Mark Email as Read or Unread" Email="[CurrentEmail]" sap:VirtualizedContainerService.HintSize="488,232" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAsReadUnread="Read" UseConnectionService="True" />
           </Sequence>
         </ActivityAction>
       </umam:ForEachEmailConnections.Body>
