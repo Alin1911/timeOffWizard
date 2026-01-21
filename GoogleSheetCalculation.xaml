@@ -155,7 +155,7 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1762,5588" sap2010:WorkflowViewState.IdRef="Sequence_15">
+  <Sequence sap:VirtualizedContainerService.HintSize="1415,5935" sap2010:WorkflowViewState.IdRef="Sequence_15">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
       <Variable x:TypeArguments="x:Int32" Name="aprobat" />
@@ -175,7 +175,7 @@
     <uga:ReadRangeConnections x:TypeArguments="sd:DataTable3" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" RangeInformation="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionId="510d884f-1f6b-4611-9bc2-17bf0dbbf52c" DisplayName="Read Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="488,296" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_2" ItemSelectionMode="Browse" Range="Sheet1" ReadAs="Values" Result="[dt]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False">
       <uga:ReadRangeConnections.ColumnNames>
         <x:Array Type="x:String">
-          <x:String>Email</x:String>
+          <x:String>10</x:String>
           <x:String>Total_Zile</x:String>
           <x:String>Zile_Folosite</x:String>
           <x:String>Zile_Ramase</x:String>
@@ -200,6 +200,11 @@
       <uga:ReadRangeConnections.RangeMetadata>
         <ugsm:RangeMetadataSlim ColumnStart="1" RangeType="Range" />
       </uga:ReadRangeConnections.RangeMetadata>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:String x:Key="bbbffa17-1024-47ac-a79a-41b860f664d0">Share</x:String>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uga:ReadRangeConnections>
     <If Condition="[dt Is Nothing OrElse dt.Rows.Count = 0]" DisplayName="Verificam daca avem date" sap:VirtualizedContainerService.HintSize="488,1088" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
@@ -245,7 +250,7 @@
           <uga:ReadRangeConnections x:TypeArguments="sd1:DataTable5" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" RangeInformation="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionId="510d884f-1f6b-4611-9bc2-17bf0dbbf52c" DisplayName="Read Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="416,291" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_7" ItemSelectionMode="Browse" Range="Sheet1" ReadAs="Values" Result="[dt]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False">
             <uga:ReadRangeConnections.ColumnNames>
               <x:Array Type="x:String">
-                <x:String>Email</x:String>
+                <x:String>10</x:String>
                 <x:String>Total_Zile</x:String>
                 <x:String>Zile_Folosite</x:String>
                 <x:String>Zile_Ramase</x:String>
@@ -270,6 +275,11 @@
             <uga:ReadRangeConnections.RangeMetadata>
               <ugsm:RangeMetadataSlim ColumnStart="1" RangeType="Range" />
             </uga:ReadRangeConnections.RangeMetadata>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:String x:Key="bbbffa17-1024-47ac-a79a-41b860f664d0">Share</x:String>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </uga:ReadRangeConnections>
         </Sequence>
       </If.Then>
@@ -297,9 +307,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[matchedRows.Count &gt; 0]" DisplayName="Verificam daca angajatul a fost gasit" sap:VirtualizedContainerService.HintSize="488,4006" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[matchedRows.Count &gt; 0]" DisplayName="Verificam daca angajatul a fost gasit" sap:VirtualizedContainerService.HintSize="488,4353" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Daca l-am gasit ii calculam zilele ramase" sap:VirtualizedContainerService.HintSize="486,2270" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Daca l-am gasit ii calculam zilele ramase" sap:VirtualizedContainerService.HintSize="486,2621" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -338,7 +348,7 @@
               <InArgument x:TypeArguments="x:Int32">[CInt(row("Zile_Ramase"))]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[ramase &lt; in_employeeDays]" DisplayName="Verificam daca mai are zile libere" sap:VirtualizedContainerService.HintSize="452,1490" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[ramase &lt; in_employeeDays]" DisplayName="Verificam daca mai are zile libere" sap:VirtualizedContainerService.HintSize="452,1841" sap2010:WorkflowViewState.IdRef="If_4">
             <If.Then>
               <Sequence DisplayName="Daca nu respingem cererea" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
@@ -351,13 +361,13 @@
                     <OutArgument x:TypeArguments="x:Int32">[out_employeeRemainingDays]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:Int32">[ramase]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32">[ramase - in_employeeDays]</InArgument>
                   </Assign.Value>
                 </Assign>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Daca da actalizam datele din tabel si acceptam cererea" sap:VirtualizedContainerService.HintSize="450,1122" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence DisplayName="Daca da actalizam datele din tabel si acceptam cererea" sap:VirtualizedContainerService.HintSize="450,1473" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -388,7 +398,7 @@
                     <InArgument x:TypeArguments="x:Int32">[dt.Rows.IndexOf(row) + 2]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <uga:WriteCellConnections Cell="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionId="510d884f-1f6b-4611-9bc2-17bf0dbbf52c" DisplayName="Write Cell" HideCell="False" sap:VirtualizedContainerService.HintSize="416,351" sap2010:WorkflowViewState.IdRef="WriteCellConnections_1" ItemSelectionMode="Browse" RangeLocation="Sheet1" UseConnectionService="True" WhatToWrite="[folosite.ToString]">
+                <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" Cell="[&quot;C&quot; + rowIndex.ToString]" ConnectionId="510d884f-1f6b-4611-9bc2-17bf0dbbf52c" DisplayName="Write Cell" HideCell="False" sap:VirtualizedContainerService.HintSize="416,351" sap2010:WorkflowViewState.IdRef="WriteCellConnections_1" ItemSelectionMode="Browse" RangeLocation="Sheet1" UseConnectionService="True" WhatToWrite="[folosite.ToString]">
                   <uga:WriteCellConnections.FileIdBackup>
                     <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID3" StoredValue="Browse">
                       <usau:BackupSlot.BackupValues>
@@ -406,7 +416,7 @@
                     </ugam:DriveItemArgument>
                   </uga:WriteCellConnections.Item>
                 </uga:WriteCellConnections>
-                <Assign sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_15">
+                <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_15">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[out_employeeRemainingDays]</OutArgument>
                   </Assign.To>
@@ -414,13 +424,31 @@
                     <InArgument x:TypeArguments="x:Int32">[ramase]</InArgument>
                   </Assign.Value>
                 </Assign>
+                <uga:WriteCellConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" Cell="[&quot;D&quot; + rowIndex.ToString]" ConnectionId="510d884f-1f6b-4611-9bc2-17bf0dbbf52c" DisplayName="Write Cell" HideCell="False" sap:VirtualizedContainerService.HintSize="416,342" sap2010:WorkflowViewState.IdRef="WriteCellConnections_2" ItemSelectionMode="Browse" RangeLocation="Sheet1" UseConnectionService="True" WhatToWrite="[ramase.ToString]">
+                  <uga:WriteCellConnections.FileIdBackup>
+                    <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </uga:WriteCellConnections.FileIdBackup>
+                  <uga:WriteCellConnections.Item>
+                    <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID4}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionKey="510d884f-1f6b-4611-9bc2-17bf0dbbf52c" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                      <ugam:DriveItemArgument.ParentIdFullPathHint>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ugam:DriveItemArgument.ParentIdFullPathHint>
+                    </ugam:DriveItemArgument>
+                  </uga:WriteCellConnections.Item>
+                </uga:WriteCellConnections>
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Daca angajatul nu este in tabel" sap:VirtualizedContainerService.HintSize="486,1606" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Daca angajatul nu este in tabel" sap:VirtualizedContainerService.HintSize="486,1602" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -451,7 +479,7 @@
               <InArgument x:TypeArguments="x:Int32">[total - folosite]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[ramase &lt; 0]" DisplayName="Verificam daca a cerut mai multe zile decat poate avea" sap:VirtualizedContainerService.HintSize="452,1005" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[ramase &lt; 0]" DisplayName="Verificam daca a cerut mai multe zile decat poate avea" sap:VirtualizedContainerService.HintSize="452,1001" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Then>
               <Sequence DisplayName="Daca da respingem cererea" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
@@ -478,7 +506,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <uga:WriteRowConnections AllFields="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DataRow="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" ArrayRow="[{in_employeeEmail, total.ToString, folosite.ToString, ramase.ToString}]" AuthScopesInvalid="False" BrowserItemFriendlyName="EmployeesTimeOff" BrowserItemId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" ConnectionId="510d884f-1f6b-4611-9bc2-17bf0dbbf52c" DataType="ArrayRow" DisplayName="Write Row" HasHeaders="False" sap:VirtualizedContainerService.HintSize="416,403" sap2010:WorkflowViewState.IdRef="WriteRowConnections_2" ItemSelectionMode="Browse" Range="Sheet1" RowPosition="0" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False" WriteMode="Append">
                   <uga:WriteRowConnections.FileIdBackup>
-                    <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                    <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID5" StoredValue="Browse">
                       <usau:BackupSlot.BackupValues>
                         <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
                       </usau:BackupSlot.BackupValues>
@@ -494,7 +522,7 @@
                     </usau:BackupSlot>
                   </uga:WriteRowConnections.InputDataTypeBackup>
                   <uga:WriteRowConnections.Item>
-                    <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID4}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
+                    <ugam:DriveItemArgument Backup="{x:Reference __ReferenceID5}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://docs.google.com/spreadsheets/d/1q1zUvONECu8q9PBAGnjMxFaii_t0IVdjTBxgTUoa2-U/edit?usp=drivesdk" FriendlyName="EmployeesTimeOff" FullPathHint="My Drive/EmployeesTimeOff" InputMode="Browse">
                       <ugam:DriveItemArgument.ParentIdFullPathHint>
                         <InArgument x:TypeArguments="x:String">
                           <Literal x:TypeArguments="x:String" Value="" />
