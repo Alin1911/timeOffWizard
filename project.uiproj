@@ -1,6 +1,6 @@
 {
   "Name": "TimeOffWizard",
   "ProjectType": "Process",
-  "Description": "Automation that decides whether you deserve a vacation or go back to your boring job",
+  "Description": "UiPath automation for processing time-off requests via Outlook 365 and Google Sheets balance tracking",
   "MainFile": "Main.xaml"
 }
